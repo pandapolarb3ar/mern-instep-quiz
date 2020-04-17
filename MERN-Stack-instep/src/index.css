@@ -1,0 +1,257 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 3px;
+}
+
+@media (min-width: 769px) {
+  .container {
+    margin: 2.5rem auto;
+  }
+}
+
+/* Result Component */
+.result {
+  padding: 1.5rem 2.5rem;
+}
+
+/* Quiz Component */
+.answerOptions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* QuestionCount Component */
+.questionCount {
+  padding: 1.5rem 2.5rem 0;
+  font-size: 14px;
+}
+
+/* Question Component */
+.question {
+  margin: 0;
+  padding: 0.5rem 2.5rem 1.5rem 2.5rem;
+}
+
+/* AnswerOption Component */
+.answerOption {
+
+  border-bottom: 2px solid rgba(164, 208, 238, 0.63);
+}
+
+.answerOption:hover {
+
+}
+
+.radioCustomButton {
+  position: absolute;
+  width: auto;
+  opacity: 0;
+}
+
+.radioCustomButton,
+.radioCustomLabel {
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.radioCustomLabel {
+  position: relative;
+  width: 100%;
+  margin-bottom:5px;
+  border: 2px solid rgba(157, 225, 241, 0.37);
+  padding: 1.5rem 2.5rem 1.5rem 5rem;
+  font-size: 20px;
+  color: rgb(119, 25, 8);
+  line-height: 1.5;
+  background-color: rgba(63, 203, 238, 0.486);
+}
+
+.radioCustomButton ~ .radioCustomLabel:before {
+  position: absolute;
+  top: 20px;
+  left: 38px;
+  width: 28px;
+  height: 28px;
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  background: #fff;
+  border: 1px solid #bbb;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.radioCustomButton:checked ~ .radioCustomLabel:before {
+  content: '';
+  background: #18db32 url(./icon-check.svg) no-repeat;
+  background-size: 27px;
+  border-color: #7cc71a;
+}
+
+/* Animation */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out 0.3s;
+}
+
+.fade-leave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-appear {
+  opacity: 0;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+nav{
+  /*    background-color: blueviolet;*/
+    height: 50px;
+    text-align: right;
+    color: #fff;
+    font-family: sans-serif;
+    margin: 0 auto;
+    
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url("./hero-img.jpg")
+  }
+  
+  .App-logo, .App-header, .App {
+    background-color: white;
+   
+  }
+  
+
+  
+ .App-header, .App {
+  background-color: white;
+  background-image: url("./hero-img.jpg")
+}
+
+/* Quiz */
+div.quiz{
+  background-color: transparent;
+  margin: 0;
+  height: 0;
+}
+
+.start-page {
+  background-image: url("./hero-img.jpg") ;
+  list-style: none;
+}
+
+.confirmation-div {
+  padding-top: 15px;
+  border: 1px black;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+.confirmation-div button {
+  border-radius: 15px;
+  margin: 0;
+  background-color: rgb(84, 230, 0);
+}
+
+.areyousure button {
+  border-radius: 8px;
+  margin: 15px;
+  border: 0;
+  padding: 3px;
+  background-color: rgb(84, 230, 0);
+  font-size: 20px;
+  font-weight: bold;
+}
+  
+  .confirm-answer {
+    border-radius: 15px;
+    padding: 10px;
+    margin: 0;
+    border: 0px;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: bolder;
+    background-color: rgba(235, 110, 28, 0.644);
+  }
+
+  
+  .radioCustomLabel:hover {
+    font-weight: bolder;
+    color : rgb(245, 227, 227);
+    background-color: rgba(97, 12, 93, 0.644);
+  }
+  .confirm-answer:hover {
+    color : rgb(5, 0, 29);
+    background-color: rgba(75, 248, 69, 0.767);
+  }
+  /* App-logo */
+
+  .App-logo {
+    padding: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    border-radius : 12px;
+    background-color: transparent;
+    background-image: radial-gradient( rgba(216, 80, 27, 0.63) 42%, rgba(9, 22, 209, 0.212));
+    margin-left: %;
+  }
+
+  .questionCount {
+    font-size: 2   rem;
+    font-weight: bolder;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(97, 49, 17, 0.795);
+  }
+
+  .question {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(58, 48, 6)
+  }
