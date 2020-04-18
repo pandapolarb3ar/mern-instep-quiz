@@ -5,7 +5,9 @@ import Question from '../components/Question'
 import ConfirmAnswer from '../components/ConfirmAnswer'
 import App from '../App'
 import ReportService from './Report/PostReport';
-
+import ValidateCandidate from './Checks/ValidateCanditate'
+import { Route, Redirect } from 'react-router-dom';
+import StartPoint from './StartPoint';
 
 class Choice extends React.Component {
   constructor(props) {
@@ -21,7 +23,8 @@ class Choice extends React.Component {
       questions: [],
       solvedAns: [],
       go:false,
-      confirmation : false 
+      confirmation : false,
+      error : false
     };
     this.begin = this.begin.bind(this);
     this.nope = this.nope.bind(this);
@@ -41,7 +44,6 @@ class Choice extends React.Component {
           mlCheck:false,
           choice: 'java'
         });
-        console.log(this.state.javaCheck);  
         break;
       case "C#":
         this.setState({
@@ -116,15 +118,23 @@ setQuiz() {
     })
   }
 
-  begin = async(e) => {
+  begin = async (e) => {
 
     const report = {
       "username" : this.state.username,
       "score" : -1,
       "test": this.state.choice
     }
-
-    var reportStatus = await ReportService(report);
+    // var reportStatus = 200
+    var validation = await ValidateCandidate(this.state.username);
+    if (validation === true) {
+        alert("Sorry but it seems like you already took this test")
+        // return (<div>YOU ALREADY TOOK TEST BITCH</div>)
+        this.setState({
+          error:true
+            })
+    }
+     var reportStatus = await ReportService(report);
     if(reportStatus === 200)
       {    
         this.setState({
@@ -141,9 +151,11 @@ setQuiz() {
 
 
   render() {
-    
-      if(this.state.go === true && this.state.questions !== undefined && this.state.solvedAns !== undefined ) 
-      return (<App questions={this.state.questions} solvedAns={this.state.solvedAns} username = {this.state.username}/>);
+      if(this.state.error) 
+          return <StartPoint />
+      else if(this.state.go === true && this.state.questions !== undefined && this.state.solvedAns !== undefined ) 
+          return (<App questions={this.state.questions} solvedAns={this.state.solvedAns} username = {this.state.username} choice = {this.state.choice} />);
+  
   else 
     return(
   

@@ -94,12 +94,12 @@ export default class Login extends Component {
                   
             </div>
             
-            <div className="buttons">
+            <div className="">
               
               <button
                 type="button"
                 onClick={this.onSubmit}
-                className="btn btn-primary"
+                className="login-btn"
               >
                 
                   {LOGIN_FIELDS.LOGIN}    

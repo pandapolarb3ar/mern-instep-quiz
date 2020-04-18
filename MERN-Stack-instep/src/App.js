@@ -4,7 +4,7 @@ import logo from './infosys_logo.jpg';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
 import axios from 'axios'
-
+import GetUser from './components/Login/elements/LoginService'
 
 class App extends React.Component {
  
@@ -13,6 +13,7 @@ class App extends React.Component {
 
     this.state = {
       username : props.username,
+      testChoice : props.choice,
       reportID : '',
       counter: 0,
       questionId: 1,
@@ -30,6 +31,7 @@ class App extends React.Component {
     };
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
     this.confirmAnswer = this.confirmAnswer.bind(this);
+    this.startTimer = this.startTimer.bind(this);
   }
     
   componentDidMount() {
@@ -41,14 +43,15 @@ class App extends React.Component {
       answerOptions: shuffledAnswerOptions[0],
       imgsrc : this.state.questions[0].imgsrc
     });
-    console.log(this.state.question);
-    axios.get('http://localhost:5000/report/'+ this.state.username)
+    // console.log(this.state.question);
+    axios.get('http://34.91.61.43:5000/report/'+ this.state.username)
 		.then(res =>{
       this.setState({
         reportID : res.data
       })
-      console.log(this.state.reportID)
+      // console.log(this.state.reportID)
     })
+    this.startTimer();
   }
   
   shuffleArray(array) {
@@ -66,7 +69,7 @@ class App extends React.Component {
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
-  
+    
     return array;
   };
 
@@ -88,7 +91,7 @@ class App extends React.Component {
     }
 
     this.setUserAnswer(event.currentTarget.value);
-    console.log(event.currentTarget.value);
+    // console.log(event.currentTarget.value);
     this.setState((state) => ({
       hasSelected : true,
     }))
@@ -110,6 +113,11 @@ class App extends React.Component {
         }));
   }
 
+
+  startTimer() {
+    setTimeout(() => alert('I am sorry but the time expired'), 1800000);
+    setTimeout(() => this.setResults(this.getResults()), 1800000);
+  }
 
   setNextQuestion() {
     const counter = this.state.counter + 1;
@@ -134,11 +142,13 @@ class App extends React.Component {
 
     //get id of report of username
 
+ 
     //update with score
-   
+    // axios.post('https;//localhost:5000/users/)
+      this.updateUser()
     var score = 0;
     for(var i = 0; i < answersCountValues.length; i++) {
-      console.log(answersCountValues[i] + " vs " + this.state.solvedAns[i])
+      // console.log(answersCountValues[i] + " vs " + this.state.solvedAns[i])
       if (answersCountValues[i] === this.state.solvedAns[i])
       score ++
     }
@@ -146,11 +156,26 @@ class App extends React.Component {
     const data = {
       "username" : this.state.username,
       "score" : score,
+      "test" : this.state.testChoice
     }
-    console.log("report id" + data)
-    axios.post('http://localhost:5000/report/update/' + this.state.reportID, data)
+    // console.log("report id" + data)
+    axios.post('http://34.91.61.43:5000/report/update/' + this.state.reportID, data)
     .then(res => res.status );
     return score;
+  }
+
+  updateUser = async(e) => {
+    var user = await axios.get('http://34.91.61.43:5000/users/'+ this.state.username)
+    .then(res => res.data[0] )
+    console.log(user._id);
+    const updatedUser = {
+      "username" : user.username,
+      "password" : user.password,
+      "tested" : "true"
+    }
+    axios.post('http://34.91.61.43:5000/users/update/'+ user._id, updatedUser)
+    .then(res => res.status)
+
   }
 
   setResults(score) {
@@ -162,7 +187,7 @@ class App extends React.Component {
 
   }
   renderQuiz() {
-    console.log("first"+ typeof(this.state.question));
+    // console.log("first"+ typeof(this.state.question));
     return (
       <Quiz
         imagePath ={this.state.imgsrc}
@@ -181,7 +206,7 @@ class App extends React.Component {
   }
 
   renderResult() {
-    return <Result quizResult={this.state.result} quizTotal={this.state.counter + 1}/>;
+    return <Result quizResult={this.state.result} quizTotal={this.state.questions.length}/>;
   }
 
   render() {

@@ -1,7 +1,7 @@
 var quizQuestionsCpp = [
   {
       question: [""],
-      imgsrc: "../cpp1.png",
+      imgsrc: "../cpp1.PNG",
       answers: [
           {
               type: "A",
@@ -24,7 +24,7 @@ var quizQuestionsCpp = [
   },
   {
     question: [""],
-    imgsrc: "../cpp2.png",
+    imgsrc: "../cpp2.PNG",
     answers: [
         {
             type: "A",
@@ -47,7 +47,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp3.png",
+    imgsrc: "../cpp3.PNG",
     answers: [
         {
             type: "A",
@@ -70,7 +70,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp4.png",
+    imgsrc: "../cpp4.PNG",
     answers: [
         {
             type: "A",
@@ -93,7 +93,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp5.png",
+    imgsrc: "../cpp5.PNG",
     answers: [
         {
             type: "A",
@@ -116,7 +116,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp6.png",
+    imgsrc: "../cpp6.PNG",
     answers: [
         {
             type: "A",
@@ -139,7 +139,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp7.png",
+    imgsrc: "../cpp7.PNG",
     answers: [
         {
             type: "A",
@@ -162,7 +162,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp8.png",
+    imgsrc: "../cpp8.PNG",
     answers: [
         {
             type: "A",
@@ -185,7 +185,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp9.png",
+    imgsrc: "../cpp9.PNG",
     answers: [
         {
             type: "A",
@@ -208,7 +208,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp10.png",
+    imgsrc: "../cpp10.PNG",
     answers: [
         {
             type: "A",
@@ -231,7 +231,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp11.png",
+    imgsrc: "../cpp11.PNG",
     answers: [
         {
             type: "A",
@@ -254,7 +254,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp12.png",
+    imgsrc: "../cpp12.PNG",
     answers: [
         {
             type: "A",
@@ -277,7 +277,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp13.png",
+    imgsrc: "../cpp13.PNG",
     answers: [
         {
             type: "A",
@@ -300,7 +300,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp14.png",
+    imgsrc: "../cpp14.PNG",
     answers: [
         {
             type: "A",
@@ -323,7 +323,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp15.png",
+    imgsrc: "../cpp15.PNG",
     answers: [
         {
             type: "A",
@@ -346,7 +346,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp16.png",
+    imgsrc: "../cpp16.PNG",
     answers: [
         {
             type: "A",
@@ -369,7 +369,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp17.png",
+    imgsrc: "../cpp17.PNG",
     answers: [
         {
             type: "A",
@@ -392,7 +392,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp18.png",
+    imgsrc: "../cpp18.PNG",
     answers: [
         {
             type: "A",
@@ -415,7 +415,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp19.png",
+    imgsrc: "../cpp19.PNG",
     answers: [
         {
             type: "A",
@@ -438,7 +438,7 @@ var quizQuestionsCpp = [
 },
 {
     question: [""],
-    imgsrc: "../cpp20.png",
+    imgsrc: "../cpp20.PNG",
     answers: [
         {
             type: "A",

@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const LoginService = data => (
-	axios.post('http://34.91.61.43/report/add', data)
-		.then(res => res.status )
-)	
+	axios.get('http://localhost:5000/users/'+ data)
+		.then(res => res.data[0].tested )
+)
 
 export default LoginService;
